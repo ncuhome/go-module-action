@@ -1,0 +1,13 @@
+name: Go Module Action
+description: Get go modules (private repo included)
+runs:
+  using: "composite"
+  steps:
+    - id: gomodule
+      name: Get go modules
+      run: |
+        git config --global url."https://$USERNAME:$CI_TOKEN@github.com/".insteadOf "https://github.com"
+        go env -w GOPRIVATE=$GOPRIVATE
+        go env -w GO111MODULE=on
+        go mod download
+      shell: bash
