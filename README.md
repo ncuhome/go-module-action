@@ -61,7 +61,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get Go Modules
-        uses: kuhsinyv/go-module-action@v1
+        uses: ncuhome/go-module-action@v1
         env:
           USERNAME: ${{ secrets.USERNAME }}
           CI_TOKEN: ${{ secrets.CI_TOKEN }}
